@@ -113,11 +113,11 @@ function dMulti() {
 
   var currentMultiValue = parseInt(savedMultiValue);
 
-  var newMultiValue = currentMultiValue + 1;
+  var newMultiValue = currentMultiValue + 2;
 
   localStorage.setItem('savedMultiValue', newMultiValue); 
   
   return newMultiValue;
 }
 
-setInterval(benchmark, 1000);
+setInterval(benchmark, 2000);
