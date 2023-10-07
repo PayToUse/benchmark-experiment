@@ -5,7 +5,7 @@ function displayRecord() {
 }
 
 function benchmark() {
-  var result = Math.floor(Math.random() * 200) + 199799;
+  var result = Math.floor(Math.random() * 200) + 99800;
   var finalM = 1 + (dMulti() / 100);
   var fixedM = finalM.toFixed(2);
   var truncResult = Math.trunc(result * finalM);
