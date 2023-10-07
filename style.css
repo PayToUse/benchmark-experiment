@@ -1,0 +1,16 @@
+body {
+  font-size: 15pt;
+  text-align: center;
+  font-family: monospace;
+  background-color: #DDDDDD;
+}
+#container {
+  background-color: #00000080;
+  padding: 10px;
+}
+#thoughts {
+  font-size: 10pt;
+}
+.odometer {
+  font-family: monospace;
+}

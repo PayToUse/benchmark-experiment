@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="odometer.css">
+  <title>Benchmark</title>
+</head>
+<body onload="benchmark(), dMulti(), displayRecord()">
+  <div id="container">
+    <h2>Your benchmark score is...</h2>
+    <h1 class="odometer" id="result">00000</h1>
+    <h3 id="thoughts"></h3>
+    <h3 id="multi"></h3>
+    <h3 id="record"></h3>
+    <h3 id="note">Note: the benchmark is accorded to Antutu v10 Benchmarking Project</h3>
+  </div>
+  <script src="odometer.js"></script>
+</body>
+</html>
