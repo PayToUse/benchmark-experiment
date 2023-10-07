@@ -5,18 +5,20 @@ function displayRecord() {
 }
 
 function benchmark() {
-  var result = Math.floor(Math.random() * 5000) + 97500;
+  var result = Math.floor(Math.random() * 200) + 199799;
   var finalM = 1 + (dMulti() / 100);
   var fixedM = finalM.toFixed(2);
   var truncResult = Math.trunc(result * finalM);
-  let formatResult = new Intl.NumberFormat().format(truncResult);
+  var formatResult = new Intl.NumberFormat().format(truncResult);
   var percent = truncResult / record;
-
-  var addPercent = (percent * 100) - 100;
+  
+  var addPercent = percent - 1;
   var finalAddPercent = addPercent.toFixed(2);
   var fixedPercent = percent * 100;
   var finalPercent = fixedPercent.toFixed(2);
-
+  
+  document.getElementById("result").innerHTML = formatResult;
+  
   if (truncResult > 50000) {
     document.getElementById("thoughts").innerHTML = "goddamn that's weak as fuck";
   }
@@ -95,28 +97,27 @@ function benchmark() {
   if (truncResult > 15000000) {
     document.getElementById("thoughts").innerHTML = "okay fuck this, it can now handle all games in one run.";
   }
-
+  if (truncResult > 17500000) {
+    document.getElementById("thoughts").innerHTML = "okay i'm outta here, not gonna come back to commentate this bullshit";
+  }
+  
   if (truncResult > record) {
-    document.getElementById("multi").innerHTML = "Multiplier: " + fixedM + "x, currently beaten the benchmark record, which is equivalent to " + finalAddPercent + "% more than it";
+    document.getElementById("multi").innerHTML = "Multiplier: " + fixedM + "x, currently beaten the benchmark record, which is equivalent to " + finalAddPercent + " times more than it";
   } else {
     document.getElementById("multi").innerHTML = "Multiplier: " + fixedM + "x, equivalent to " + finalPercent + "% of the record";
   }
-
-  // for the odometer
-  
-  document.querySelector(".odometer").innerHTML = truncResult;
 }
 
 function dMulti() {
-  var savedAntutuValue = localStorage.getItem('savedAntutuValue') || 0;
+  var savedMultiValue = localStorage.getItem('savedMultiValue') || 0;
 
-  var currentAntutuValue = parseInt(savedAntutuValue);
+  var currentMultiValue = parseInt(savedMultiValue);
 
-  var newAntutuValue = currentAntutuValue + 1;
+  var newMultiValue = currentMultiValue + 1;
 
-  localStorage.setItem('savedAntutuValue', newAntutuValue);
-
-  return newAntutuValue;
+  localStorage.setItem('savedMultiValue', newMultiValue); 
+  
+  return newMultiValue;
 }
 
-setInterval(benchmark, 2000);
+setInterval(benchmark, 1000);
